@@ -1,1 +1,9 @@
+---
+- name: TEST2
+  hosts: localhost
+  gather_facts: false
 
+  tasks:
+  - name: Display TEST2
+    debug:
+      msg: "TEST2"
