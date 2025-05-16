@@ -5,7 +5,7 @@
 
   tasks:
   - name: Verifica visibilità /opt/awx-bundle
-    command: ls -l /mnt/awx-bundle/
+    command: ls -l /mnt/awx-share/
     register: result
   
   - debug:
