@@ -4,7 +4,14 @@
   gather_facts: false
 
   tasks:
-  - name: Trova i file in /mnt/awx_share
+    - name: Verifica visibilità /tmp
+    command: ls -l /tmp
+    register: result
+  
+  - debug:
+      var: result.stdout_lines
+
+  - name: Trova i file in /opt/awx_share
     ansible.builtin.find:
       paths: /opt/awx_share
       file_type: file
