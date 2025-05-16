@@ -11,10 +11,10 @@
   - debug:
       var: result.stdout_lines
       
-- name: Scrive un file nella share /mnt/awx_share
-  copy:
-    dest: /mnt/awx_share/test_awx_output.txt
-    content: "Ciao! Questo file è stato scritto da un job AWX dentro l'EE."
+  - name: Scrive un file nella share /mnt/awx_share
+    copy:
+      dest: /mnt/awx_share/test_awx_output.txt
+      content: "Ciao! Questo file è stato scritto da un job AWX dentro l'EE."
 
   
       
