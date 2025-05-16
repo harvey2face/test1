@@ -6,7 +6,7 @@
   tasks:
   - name: Trova i file in /mnt/awx_share
     ansible.builtin.find:
-      paths: /mnt/awx_share
+      paths: /opt/awx_share
       file_type: file
     register: found_files
 
