@@ -5,8 +5,8 @@
 
   tasks:
     - name: Verifica visibilità /tmp
-    command: ls -l /tmp
-    register: result
+      command: ls -l /tmp
+      register: result
   
   - debug:
       var: result.stdout_lines
