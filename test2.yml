@@ -4,6 +4,13 @@
   gather_facts: false
 
   tasks:
+  - name: Verifica visibilità /opt/awx-bundle
+    command: ls -l /opt/awx-bundle
+    register: result
+  
+  - debug:
+      var: result.stdout_lines
+      
   - name: Pause for 5 minutes to verify mounts
     ansible.builtin.pause:
       minutes: 5
