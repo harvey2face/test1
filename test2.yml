@@ -4,6 +4,13 @@
   gather_facts: false
 
   tasks:
-  - name: Display TEST2
-    debug:
-      msg: "TEST2"
+  - name: Trova i file in /mnt/awx_share
+    ansible.builtin.find:
+      paths: /mnt/awx_share
+      file_type: file
+    register: found_files
+
+  - name: Mostra i file trovati
+    ansible.builtin.debug:
+      msg: "{{ item.path }}"
+    loop: "{{ found_files.files }}"
