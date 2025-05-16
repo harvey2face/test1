@@ -4,6 +4,10 @@
   gather_facts: false
 
   tasks:
+  - name: Pause for 5 minutes to verify mounts
+    ansible.builtin.pause:
+      minutes: 5
+      
   - name: Verifica visibilità /tmp
     command: ls -l /tmp
     register: result
